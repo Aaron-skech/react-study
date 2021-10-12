@@ -1,14 +1,23 @@
+/*
+ * @Description: 
+ * @Author: Aaron Peng
+ * @Date: 2021-10-12 20:26:54
+ * @LastEditTime: 2021-10-12 21:15:39
+ * @LastEditors: Aaron Peng
+ */
 import * as actionType from '../action-types'
 //Counter1组件的对应的state
-let initalState = {number:0};
+let initalState = {number:0,color:'black'};
 
 //Counter1组件的对应的reducer
 function counter2(state = initalState,action){
     switch(action.type){
         case actionType.ADD2:
-            return {number:state.number+1};
+            return {...state,number:state.number+1};
         case actionType.MINUS2:
-            return {number:state.number-1};
+            return {...state,number:state.number-1};
+        case actionType.MINUS2:
+            return {...state,color:action.payload};
          default:
              return state; 
     }

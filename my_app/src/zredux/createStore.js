@@ -1,18 +1,28 @@
+/*
+ * @Descrfang'huifanghui
+ * @Author: Aaron Peng
+ * @Date: 2021-10-12 20:26:54
+ * @LastEditTime: 2021-10-12 22:45:50
+ * @LastEditors: Aaron Peng
+ */
 
 
 function createStore(reducer,preloadState){
-    let listener = [];
+    let listeners = [];
     let state = preloadState;
     function getState(){
         return state;
     }
     function dispatch(action){
         state =  reducer(state,action)
-        listener.forEach(l=>l())
+        listeners.forEach(l=>l())
         return action;
     }
-    function subscribe(listen){
-        listener.push(listen)
+    function subscribe(listener){
+        listeners.push(listener)
+        return ()=>{
+            listeners=listeners.filter(l=>l!=listener)
+        }
  
     }
     dispatch({type:'@@REDUX/INIT'})

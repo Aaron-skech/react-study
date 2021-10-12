@@ -1,3 +1,10 @@
+/*
+ * @Description: 
+ * @Author: Aaron Peng
+ * @Date: 2021-10-12 20:26:54
+ * @LastEditTime: 2021-10-12 22:27:22
+ * @LastEditors: Aaron Peng
+ */
 // import {createStore} from './redux';
 
 // let initalState = 0;
@@ -32,7 +39,12 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 import Counter1 from './components/Counter1.js';
-import Counter2 from './components/Counter1.js';
+import Counter2 from './components/Counter2.js';
+import store from './store';
 
-ReactDOM.render(<div><Counter1/><Counter2/></div>,document.getElementById('root'))
+ReactDOM.render(<Provider store = {store}>
+            <Counter1/>
+            <Counter2/>
+    </Provider>,document.getElementById('root'))

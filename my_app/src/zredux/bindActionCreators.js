@@ -1,3 +1,10 @@
+/*
+ * @Description: 
+ * @Author: Aaron Peng
+ * @Date: 2021-10-12 20:26:54
+ * @LastEditTime: 2021-10-12 20:38:02
+ * @LastEditors: Aaron Peng
+ */
 function bindActionCreator(actionCreator,dispatch){
     return function(...args){
         return dispatch(actionCreator.apply(this,args))
@@ -8,9 +15,7 @@ function bindActionCreator(actionCreator,dispatch){
 
 
 function bindActionCreators(actionCreators,dispatch){
-    if(typeof actionCreators === 'function'){
-       return bindActionCreator(bindActionCreators,dispatch)
-    }
+
     const boundActionCreators = {};
     for(const key in actionCreators){
         const actionCreator =actionCreators[key];
