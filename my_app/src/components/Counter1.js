@@ -1,41 +1,11 @@
 
 import React, {Component} from 'react';
-import {createStore, bindActionCreators} from '../redux';
-let initalState = {number:0};
-const ADD = 'ADD';
-const MINUS = 'MINUS';
-
-// function add(){
-//     return {type:ADD}
-// };
-// function minus(){
-//     return {type:MINUS}
-// };
-let actions = {
-    add(){
-        return {type:ADD}
-    },
-    minus(){
-        return {type:MINUS}
-    }
-    
-}
+import { bindActionCreators} from 'redux';
+import store from '../store';
+import actions from '../store/actions/counter1'
 
 
-function reducer(state = initalState,action){
-   switch(action.type){
-       case ADD:
-           return {number:state.number+1};
-       case MINUS:
-           return {number:state.number-1};
-        default:
-            return state; 
-   }
 
-}
-let store = createStore(reducer);
-// let boundAdd = bindActionCreators(add,store.dispatch);
-// let boundMinus = bindActionCreators(minus,store.dispatch)
 let boundActions = bindActionCreators(actions,store.dispatch)
 export default class Counter1 extends Component{
     //state = {number:store.getState().number};
