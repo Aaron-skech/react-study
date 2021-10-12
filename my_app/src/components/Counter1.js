@@ -8,22 +8,22 @@ import actions from '../store/actions/counter1'
 
 let boundActions = bindActionCreators(actions,store.dispatch)
 export default class Counter1 extends Component{
-    //state = {number:store.getState().number};
+    state = {number:store.getState().counter1.number};
     componentDidMount(){
        this.unsubscribe = store.subscribe(()=>{
-            this.setState({number:store.getState().number})
+            this.setState({number:store.getState().counter1.number})
         })
 
     }
     componentWillUnmount(){
-      //  this.unsubscribe()
+        this.unsubscribe()
     }
     render(){
         return(
             <div>
-                <p>{store.getState().number}</p>
-                <button onClick={boundActions.add}>+</button>
-                <button onClick={boundActions.minus}>-</button>
+                <p>{this.state.number}</p>
+                <button onClick={boundActions.add1}>+</button>
+                <button onClick={boundActions.minus1}>-</button>
             </div>
         )
     }

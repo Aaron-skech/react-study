@@ -1,9 +1,9 @@
 import * as actionType from '../action-types'
 let actions = {
-    add(){
+    add1(){
         return {type:actionType.ADD1}
     },
-    minus(){
+    minus1(){
         return {type:actionType.MINUS1}
     }
     
