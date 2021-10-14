@@ -1,3 +1,10 @@
+/*
+ * @Description: 
+ * @Author: Aaron Peng
+ * @Date: 2021-10-13 21:56:43
+ * @LastEditTime: 2021-10-14 21:06:38
+ * @LastEditors: Aaron Peng
+ */
 import React, {Component} from 'react';
 //import { bindActionCreators} from 'zredux';
 //import store from '../store';
@@ -27,8 +34,8 @@ function Counter2(props) {
         return(
             <div style={{color}}>
                 <p>{number}</p>
-                <button onClick={dispatch(actions.add2())}>+</button>
-                <button onClick={dispatch(actions.minus2())}>-</button>
+                <button onClick={()=>dispatch(actions.add2())}>+</button>
+                <button onClick={()=>dispatch(actions.minus2())}>-</button>
                 <button onClick={()=>dispatch(actions.changeColor('green')) }>改成绿色</button>
             </div>
         )

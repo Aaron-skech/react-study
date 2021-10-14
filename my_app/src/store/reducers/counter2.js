@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: Aaron Peng
  * @Date: 2021-10-12 20:26:54
- * @LastEditTime: 2021-10-12 21:15:39
+ * @LastEditTime: 2021-10-14 21:07:29
  * @LastEditors: Aaron Peng
  */
 import * as actionType from '../action-types'
@@ -16,7 +16,7 @@ function counter2(state = initalState,action){
             return {...state,number:state.number+1};
         case actionType.MINUS2:
             return {...state,number:state.number-1};
-        case actionType.MINUS2:
+        case actionType.CHANGE_COLOR:
             return {...state,color:action.payload};
          default:
              return state; 
